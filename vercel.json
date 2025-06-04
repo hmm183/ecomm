@@ -1,3 +1,4 @@
+// vercel.json
 {
   "version": 2,
   "name": "your-ecommerce-app",
@@ -21,5 +22,5 @@
     "NODE_ENV": "production"
   },
   "installCommand": "npm install --prefix client && npm install --prefix server",
-  "buildCommand": "echo \"--- Vercel: This is my custom build command! --- Hello from $(pwd)\"" 
+  "buildCommand": "echo \"--- Starting client build ---\" && npm run build --prefix client && echo \"--- Client build finished. Moving files... ---\" && rm -rf server/public && mv client/build server/public && echo \"--- Build artifacts moved to server/public ---\"" // <--- Change to this
 }
