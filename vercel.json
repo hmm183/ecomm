@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "your-ecommerce-app",
   "builds": [
     {
       "src": "server/index.js",
@@ -14,12 +13,11 @@
     },
     {
       "src": "/(.*)",
-      "dest": "server/index.js"
+      "dest": "client/$1"
     }
   ],
   "env": {
     "NODE_ENV": "production"
   },
-  "installCommand": "npm install --prefix client && npm install --prefix server",
-  "buildCommand": "echo \"--- Vercel: This is my custom build command! --- Hello from $(pwd)\"" 
+  "installCommand": "npm install --prefix client && npm install --prefix server"
 }
